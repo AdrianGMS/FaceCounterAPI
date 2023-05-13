@@ -23,7 +23,7 @@ import pickle
 import numpy as np
 from PIL import Image, ImageOps
 
-app1 = Flask(__name__)
+app = Flask(__name__)
 key = {
     "type": "service_account",
     "project_id": "facecounter-7bdad",
@@ -46,8 +46,8 @@ firebase_admin.initialize_app(cred, {'storageBucket': 'facecounter-7bdad.appspot
 def face_counter_api():
     
 
-    app = firebase_admin.get_app()
-    print(app.name)
+    app1 = firebase_admin.get_app()
+    print(app1.name)
 
     # Get a reference to the Firestore database
     db = firestore.client()
@@ -208,4 +208,4 @@ def face_counter_api():
     return "Reconocimiento realizado"
 
 if __name__ == "__main__":
-    app1.run()
+    app.run()
