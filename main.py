@@ -42,7 +42,7 @@ key = {
 cred = credentials.Certificate(key)
 firebase_admin.initialize_app(cred, {'storageBucket': 'facecounter-7bdad.appspot.com'})
 
-@app1.route("/")
+@app.route("/")
 def face_counter_api():
     
 
